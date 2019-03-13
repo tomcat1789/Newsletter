@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="main-content">
+{% for piece in data.pieces %}
+<a class= "c-news__link" href="{{ piece.link }}">
+  <div class="c-news" >
+    <div class="c-news__container">
+      <div class="c-news__container__date"> Ausgabe vom {{piece.datum | date('DD.MM.5YYYY')}}</div>
+      <div class="c-news__container__Title">Themen: &nbsp;</div><div id='c-news__title' class="c-news__container__Title" "> {{ piece.title }}</div>
+      <div class="c-news__container__autor"> von {{piece.autor}}</div>
+    </div>
+    <div class="c-news__imgContainer">
+      <img class="c-news__imgContainer__img" src="/modules/my-apostrophe-assets/pics/arrow.png">
+    </div>
+  </div>
+
+</a>
+  {% endfor %}
+
+</div>
+{% endblock %}

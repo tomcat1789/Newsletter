@@ -1,0 +1,283 @@
+@import "utils/reset.less";
+
+// Delete the boilerplate CSS below when you are ready to dive in and customize your sites:
+body {
+  background-image: url(/modules/my-apostrophe-assets/pics/StCanard.png);
+  background-size: 100% 600px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-color: #00003B;
+}
+
+.main-content, .o-navi, .o-footer {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  margin: 50px auto;
+  padding: 10px;
+  width: 1000px;
+  //color: #98F5FF;
+  color: #BFEFFF;
+  // background-color: @apos-primary;
+  // .apos-drop-shadow;
+  text-align: justify;
+
+
+
+  // Basic rich-text editor styles:
+  h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  strong { font-weight: bold; }
+  em { font-style: italic; }
+}
+
+
+  .o-navi {
+    //background-color: #00bbff;
+    //max-width: 800px;
+    padding: 5px 20px 5px 20px;
+    margin-bottom: 100px;
+    &__Li {
+      display: inline;
+      padding-left: 15px;
+      padding-right: 15px;
+      &--current {
+        font-weight: bold;
+        border-bottom: 3px solid #483d8b;
+        padding-bottom: 8px;
+      }
+      &__Text {
+        text-decoration: none;
+        color: #C1CDCD;
+        font-size: 13px;
+        //background-color: #00ccff;
+        &:hover {
+          //font-weight: bold;
+          color: #fff;
+          //border-bottom: 3px solid #483d8b;
+          //padding-bottom: 8px;
+        }
+      }
+    }
+    &__imgContainer {
+      //display: inline-block;
+      //ext-align: center;
+      //vertical-align: middle;
+      position: relative;
+      //margin-left: 185px;
+      &__img {
+        max-height: 75pX;
+        width: 150px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        filter: brightness(1.5);
+      }
+    }
+    &__login {
+      float: right;
+      text-decoration: none;
+      color: #C1CDCD;
+      font-size: 13px;
+      &:hover {
+        //text-decoration:underline;
+        font-weight: bold
+      }
+      }
+}
+
+.c-claim {
+
+// background-color: #f00;
+height: 150px;
+
+  &__content {
+    //transform: translateY(10px);
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #eef;
+    color: #000;
+    text-align: center;
+    width: 800px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    &__titel {
+      font-size: 30px;
+      margin-bottom: 10px;
+      display: inline-block;
+      font-weight: bold;
+      max-width: 600px;
+    }
+    &__zitat {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+    &__autor {
+      color: #424242;
+    }
+  }
+  &__qContainer {
+    margin-left: 100px;
+    position: relative;
+    top: 15px;
+    &__qImg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &__container {
+    margin-left: 820px;
+    position: relative;
+    bottom: 155px;
+    &__img {
+      max-height: 160px;
+      max-width: 160px;
+    }
+  }
+}
+
+  .c-content {
+     // padding: 10px;
+     //border: 3px solid #FFF;
+     &__con {
+       width: 480px;
+       text-align: justify;
+       //float:left;
+       display: inline-block;
+     }
+     &__spacer {
+       display: inline-block;
+       //border: 2px solid #f00;
+       width:10px;
+
+     }
+  }
+  #BL {
+
+  }
+  #TL {
+    vertical-align: top;
+  }
+  #TR {
+    vertical-align: top;
+  }
+  #BR{
+
+
+  }
+
+  .c-news {
+    margin-bottom: 20px;
+    // border: 1px solid black;
+    //max-width: 250px;
+    padding: 40px;
+
+    background-color: #eef;
+    &:hover {
+      background-color: #fff;
+    }
+    &__link {
+      text-decoration: none;
+      // display:inline;
+    }
+    &__container {
+      max-width: 800px;
+      display: inline-block;
+      &__Title {
+        // border: 1px solid black;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        color: #000;
+        display: inline-block;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      &__date {
+        font-size: 14px;
+        color: #424242;
+        // display:inline;
+      }
+      &__autor {
+        font-size: 17px;
+        margin-top: 10px;
+        color:#6495ED;
+        // display:inline;
+      }
+    }
+    &__imgContainer {
+      border-left: 1px solid black;
+      height: 80px;
+      width: 80px;
+      float: right;
+      display: inline-block;
+      &__img {
+        margin-top: 10px;
+        max-height: 60pX;
+        max-width: 60px;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  #c-news__title {
+    font-weight: bold;
+    max-width: 710px;
+
+  }
+  .blaMain {
+
+  }
+
+  .o-footer {
+    //background-color: #00bbff;
+    // max-width: 800px;
+    padding: 5px 20px 5px 20px;
+    bottom: 0;
+    &__Text {
+      //text-decoration: none;
+      color: #C1CDCD;
+      font-size: 15px;
+      //background-color: #00ccff;
+      display: inline;
+      margin-left: 20px;
+      margin-right: 20px;
+      float: right;
+      &:hover {
+        //text-decoration:none;
+        //font-weight: bold
+        color: #fff;
+
+      }
+    }
+    &__copyright {
+      color: #C1CDCD;
+      font-size: 15px;
+      //background-color: #00ccff;
+      display: inline;
+      float: left;
+    }
+
+  }
+
+  .o-impr {
+    padding: 20px;
+    background-color: #eef;
+    color: #000;
+  }
+
+  .apos-slideshow h4 {
+    display: none;
+  }

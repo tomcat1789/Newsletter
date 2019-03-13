@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+
+
+<div class="main-content">
+  <div class="o-impr">
+
+
+      {{ apos.singleton(data.page, 'textBlock', 'apostrophe-rich-text', {
+        toolbar: [ 'Bold', 'Italic' ]
+
+      }) }}
+    </div>
+</div>
+{% endblock %}

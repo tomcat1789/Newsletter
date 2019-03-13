@@ -1,0 +1,27 @@
+
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+
+{% block main %}
+
+<div class="main-content">
+
+
+  {{ apos.singleton(data.page, 'claims', 'claim', {
+    toolbar: [ 'Bold', 'Italic' ]
+
+  }) }}
+<!-- //eventuell contextual -->
+
+      {{
+        apos.area(data.page, 'content', {
+          widgets: {
+            'content': {},
+            'apostrophe-rich-text': {}
+          }
+        })
+      }}
+</div>
+
+
+{% endblock %}

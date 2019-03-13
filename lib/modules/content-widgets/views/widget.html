@@ -1,0 +1,41 @@
+<!-- <div class="content">
+
+<div id ="content" class="">
+    <div class="lSide">
+        {{ apos.area(data.widget, 'areaLeft', {
+            widgets: {
+                'apostrophe-images': {},
+                'apostrophe-rich-text': {}
+            }
+        }) }}
+    </div>
+    <div class="rSide">
+        {{ apos.area(data.widget, 'areaRight', {
+            widgets: {
+                'apostrophe-images': {},
+                'apostrophe-rich-text': {}
+            }
+        }) }}
+    </div>
+</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+<div class="c-content">
+{% if data.widget.auswahl==='picLeft' %}
+<div id="BL" class="c-content__con">{{ apos.singleton(data.widget, 'picture', {}) }}</div>
+<div class="c-content__spacer"></div>
+<div id="TR" class="c-content__con">{{ apos.singleton(data.widget, 'text', {}) }}</div>
+{% else %}
+<div id="TL" class="c-content__con">{{ apos.singleton(data.widget, 'text', {}) }}</div>
+<div class="c-content__spacer"></div>
+<div id="BR"class="c-content__con">{{ apos.singleton(data.widget, 'picture', {}) }}</div>
+{% endif %}
+</div>
