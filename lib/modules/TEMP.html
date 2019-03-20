@@ -1,26 +1,29 @@
-Titelfolie
+Zum Testen von Quellcode usw.
 
-Einleitung
-- Motivation
-- Forschungsfrage
-- eventuell Kritikpunkte (Visuelle Qualität, Realismus, Bewertung der Programme)
+<div class="imgContainer"><a href="{{ data.home._url }}"><img class="imgContainer__img" src="/modules/my-apostrophe-assets/pics/canard.png"></a></div>
 
-Die genutzten Programme kurz vorstellen
-- Adobe Photoshop
-- B2M
-- Cinema 4D
-- SpeedTree
-- Unreal Engine 4
+<label class="o-hamburger" for="toggle">&#9776</label>
+<input class="o-checkbox" type="checkbox" id="toggle">
+<div class="o-navi">
 
-Diagramm: Welche Aufgaben mit welchem Programm
+  <ul class="o-navi__ul">
+    {% if data.page._ancestors[0] %}
+      <li class="o-navi__ul__Li"><a class="o-navi__ul__Li__Text" href="{{ data.home._url }}">{{ data.home.title }}</a></li>
+    {% endif %}
 
-Bewertung der Programme
-- Adobe Photoshop
-- B2M
-- Cinema 4D
-- SpeedTree
-- Unreal Engine 4
+    {% for tab in data.home._children %}
+      <li class="o-navi__ul__Li {% if data.page and
+        (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)
+      %}
+        o-navi__ul__Li--current
+      {% endif %}"><a class="o-navi__ul__Li__Text" href="{{ tab._url }}">{{ tab.title }}</a></li>
+    {% endfor %}
 
-Testung der VR-Anwendung
+    {% if not data.user %}
+    <li class="o-navi__ul__Li o-navi__ul__login"><a class="o-navi__ul__login__text" href="/login">Login</a></li>
+    {% endif %}
+  </ul>
 
-Fazit & Ausblick
+
+
+</div>
