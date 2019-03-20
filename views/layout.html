@@ -25,25 +25,37 @@
     like headers or navigation.
   #}
 
-  <ul class="o-navi">
-    {% if data.page._ancestors[0] %}
-      <li class="o-navi__Li"><a class="o-navi__Li__Text" href="{{ data.home._url }}">{{ data.home.title }}</a></li>
-    {% endif %}
 
-    {% for tab in data.home._children %}
-      <li class="o-navi__Li {% if data.page and
-        (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)
-      %}
-        o-navi__Li--current
-      {% endif %}"><a class="o-navi__Li__Text" href="{{ tab._url }}">{{ tab.title }}</a></li>
-    {% endfor %}
+  <div class="imgContainer"><a href="{{ data.home._url }}"><img class="imgContainer__img" src="/modules/my-apostrophe-assets/pics/canard.png"></a></div>
 
-    <li class="o-navi__imgContainer"><a href="{{ data.home._url }}"><img class="o-navi__imgContainer__img" src="/modules/my-apostrophe-assets/pics/canard.png"></a></li>
+  <div class="o-hamburger">
+    <label class="o-hamburger__icon" for="toggle">&#9776</label>
+  </div>
 
-    {% if not data.user %}
-      <a class="o-navi__login" href="/login">Login</a>
-    {% endif %}
-  </ul>
+  <input class="o-checkbox" type="checkbox" id="toggle">
+  <div class="o-navi">
+
+    <ul class="o-navi__ul">
+      {% if data.page._ancestors[0] %}
+        <li class="o-navi__ul__Li"><a class="o-navi__ul__Li__Text" href="{{ data.home._url }}">{{ data.home.title }}</a></li>
+      {% endif %}
+
+      {% for tab in data.home._children %}
+        <li class="o-navi__ul__Li {% if data.page and
+          (apos.pages.isAncestorOf(tab, data.page) or tab._id == data.page._id)
+        %}
+          o-navi__ul__Li--current
+        {% endif %}"><a class="o-navi__ul__Li__Text" href="{{ tab._url }}">{{ tab.title }}</a></li>
+      {% endfor %}
+
+      {% if not data.user %}
+      <li class="o-navi__ul__Li o-navi__ul__login"><a class="o-navi__ul__login__text" href="/login">Login</a></li>
+      {% endif %}
+    </ul>
+
+
+
+  </div>
 
 
 

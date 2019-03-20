@@ -1,6 +1,8 @@
 <div class="o-footer">
   <p class="o-footer__copyright"> Copyright © 2019  </p>
-  {% for piece in data.widget._pieces %}
-  <a class="o-footer__Text" href="{{ piece.link }}">{{ piece.title }}</a>
+  <div class="o-footer__links">
+    {% for piece in data.widget._pieces %}
+      <a class="o-footer__links__Text" href="{{ piece.link }}">{{ piece.title }}</a>
     {% endfor %}
+  </div>
 </div>
