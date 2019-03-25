@@ -1,0 +1,81 @@
+<head>
+
+</head>
+
+<body>
+  <!-- Liste -->
+    <ol id ="list" class="list" type="1">
+    </ol>
+
+  <!-- Formularfeld für Buttons und Textfeld -->
+    <form>
+      <div class="">
+        Textfeld (Stichpunkt ohne Aufzählungszeichen eingeben und mit Zeilenumbruch trennen)
+      </div>
+       <div>
+          <textarea id="text" name="text" cols="35" rows="4"></textarea>
+          <input type="button" onclick="insertText()" value="Liste Senden" />
+          <input type="button" onclick="editText()" value="Liste Bearbeiten" />
+          <button id="button" type="button" name="button" onclick="switchFunction();">Aufzählung ändern in: Ganze Zahlen </button>
+       </div>
+    </form>
+
+
+
+
+  <script type="text/javascript">
+  // Variable für reintext ohne <li>
+    var t = "";
+
+  // Funktion zur Erstellung der Liste
+    function insertText() {
+      // holt Text aus Textfeld
+      t = document.getElementById('text').value;
+      // neue Variable, damit Reintext in t zur Bearbeitung bestehen bleibt
+      var l = "";
+      // Teilt Text bei Zeilenumbruch und schreibt Teile in Array
+      var str = t.split("\n");
+
+      // erstellt <li> für jedes Element im Array
+      for (var i = 0; i < str.length; i++) {
+        // Prüft ob Zeile ohne Inhalt ist
+        if(str[i] != "") {
+        l = l + "<li>" + str[i] + "</li>";
+        }
+      }
+      // fügt erstellte Liste in <ol> mit ID "list" ein
+      document.getElementById("list").innerHTML = l;
+      // löscht Eingabefeld
+      document.getElementById('text').value = "";
+    }
+
+
+  // Funktion lädt Text in Eingabefeld zur Bearbeitung
+    function editText() {
+      document.getElementById('text').value = t;
+    }
+
+
+  // Funktion zur Änderung der Aufzählungszeichen
+    function switchFunction() {
+      // wandelt den Wert von Attribut Type des Elements mit der Klasse "list" in Integer
+      var x = parseInt(document.getElementsByClassName("list")[0].getAttribute("type"), 10);
+      var y = "";
+      // Prüft, ob x eine Zahl ist oder nicht
+      // wenn ganze Zahl, dann wird auf Römische Ziffern gewechelt
+      // ansonsten zu ganzen Zahlen und Text des Buttons wird geändert
+      if(Number.isInteger(x)) {
+        x = "I";
+        y = "Ganze Zahlen";
+      } else {
+        x = "1";
+        y = "Römische Zahlen";
+      }
+      // Attribut wird gesetzt
+      document.getElementsByClassName('list')[0].setAttribute("type", x);
+      // Text des Buttons wird geändert
+      document.getElementById("button").innerHTML = "Aufzählung ändern in: " + y;
+     }
+  </script>
+
+</body>
