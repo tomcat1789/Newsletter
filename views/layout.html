@@ -17,6 +17,7 @@
     This block outputs its contents in the HTML document's <head>.
     It is a good place to put extra <script> <link> and <meta> tags.
   #}
+  <script  src="/modules/my-apostrophe-assets/js/bla.js"></script>
 {% endblock %}
 
 {% block beforeMain %}
@@ -29,11 +30,15 @@
   <div class="imgContainer"><a href="{{ data.home._url }}"><img class="imgContainer__img" src="/modules/my-apostrophe-assets/pics/canard.png"></a></div>
 
   <div class="o-hamburger">
-    <label class="o-hamburger__icon" for="toggle">&#9776</label>
+    <label class="o-hamburger__icon" for="toggle" onclick="toggleMenu()">
+      <div id="o-hamburger__div1" class="o-hamburger__icon__div o-hamburger__icon__div1"></div>
+      <div id="o-hamburger__div2" class="o-hamburger__icon__div o-hamburger__icon__div2"></div>
+      <div id="o-hamburger__div3" class="o-hamburger__icon__div o-hamburger__icon__div3"></div>
+    </label>
   </div>
 
   <input class="o-checkbox" type="checkbox" id="toggle">
-  <div class="o-navi">
+  <div class="o-navi" onload="resetMenu()">
 
     <ul class="o-navi__ul">
       {% if data.page._ancestors[0] %}

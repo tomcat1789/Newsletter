@@ -1,11 +1,17 @@
-Zum Testen von Quellcode usw.
-
 <div class="imgContainer"><a href="{{ data.home._url }}"><img class="imgContainer__img" src="/modules/my-apostrophe-assets/pics/canard.png"></a></div>
 
-<label class="o-hamburger" for="toggle">&#9776</label>
-<input class="o-checkbox" type="checkbox" id="toggle">
-<div class="o-navi">
+<div class="o-hamburger">
+  <label class="o-hamburger__icon" for="toggle">
+    <input class="o-hamburger__checkbox" type="checkbox" id="ani">
+    <label id="cDiv1" class="o-hamburger__icon__div" for="ani"></label>
+    <label id="cDiv2" class="o-hamburger__icon__div" for="ani"></label>
+    <label id="cDiv3" class="o-hamburger__icon__div" for="ani"></label>
+  </label>
+</div>
 
+<input class="o-checkbox" type="checkbox" id="toggle">
+
+<div class="o-navi">
   <ul class="o-navi__ul">
     {% if data.page._ancestors[0] %}
       <li class="o-navi__ul__Li"><a class="o-navi__ul__Li__Text" href="{{ data.home._url }}">{{ data.home.title }}</a></li>
@@ -23,7 +29,7 @@ Zum Testen von Quellcode usw.
     <li class="o-navi__ul__Li o-navi__ul__login"><a class="o-navi__ul__login__text" href="/login">Login</a></li>
     {% endif %}
   </ul>
-
-
-
 </div>
+
+
+<!-- &#9776 : Code für Hamburger -->
